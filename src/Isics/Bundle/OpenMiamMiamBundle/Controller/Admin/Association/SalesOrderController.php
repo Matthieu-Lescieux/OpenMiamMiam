@@ -124,7 +124,7 @@ class SalesOrderController extends BaseController
         return $this->render('IsicsOpenMiamMiamBundle:Admin\Association\SalesOrder:list.html.twig', array(
             'association' => $association,
             'branchOccurrence' => $branchOccurrence,
-            'branchOccurrences' => $this->get('open_miam_miam.branch_occurrence_manager')->getToProcessForAssociation($association),
+            'branchOccurrences' => array_reverse($this->get('open_miam_miam.branch_occurrence_manager')->getToProcessForAssociation($association)),
             'salesOrders' => $salesOrders,
             'salesOrdersStats' => $statistics
         ));
